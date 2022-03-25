@@ -13,4 +13,10 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="BottomNavigationViewStyle" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="android:background">@color/background</item>
+        <item name="itemTextColor">@color/bottom_bav_item_color</item>
+        <item name="itemIconTint">@color/bottom_bav_item_color</item>
+    </style>
 </resources>

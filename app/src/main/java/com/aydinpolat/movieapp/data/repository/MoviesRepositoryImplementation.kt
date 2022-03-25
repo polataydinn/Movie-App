@@ -23,7 +23,7 @@ class MoviesRepositoryImplementation @Inject constructor(
         return api.getUpComingMovies(Constants.AUTH_TOKEN, Constants.LANGUAGE, 1)
     }
 
-    override suspend fun getPopularMovies(): PopularDto {
+    override suspend fun getPopularMovies(): TopRatedDto {
         return api.getPopularMovies(Constants.AUTH_TOKEN, Constants.LANGUAGE, 1)
     }
 

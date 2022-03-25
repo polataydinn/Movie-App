@@ -13,34 +13,34 @@ import retrofit2.http.Query
 
 interface MovieApi {
     @GET("/3/movie/top_rated?")
-    fun getTopRatedMovies(
+    suspend fun getTopRatedMovies(
         @Query("api_key") apiKey: String,
         @Query("language") language: String,
         @Query("page") page: Int
     ): TopRatedDto
 
     @GET("/3/movie/upcoming?")
-    fun getUpComingMovies(
+    suspend fun getUpComingMovies(
         @Query("api_key") apiKey: String,
         @Query("language") language: String,
         @Query("page") page: Int
     ) : UpComingDto
 
     @GET("/3/movie/popular?")
-    fun getPopularMovies(
+    suspend fun getPopularMovies(
         @Query("api_key") apiKey: String,
         @Query("language") language: String,
         @Query("page") page: Int
-    ) : PopularDto
+    ) : TopRatedDto
 
     @GET("/3/movie/latest?")
-    fun getLatestMovie(
+    suspend fun getLatestMovie(
         @Query("api_key") apiKey: String,
         @Query("language") language: String,
     ) : LatestDto
 
     @GET("/3/movie/{movie_id}/similar?")
-    fun getSimilarMovies(
+    suspend fun getSimilarMovies(
         @Query("api_key") apiKey: String,
         @Query("language") language: String,
         @Query("page") page: Int,
@@ -48,14 +48,14 @@ interface MovieApi {
     ) : SimilarDto
 
     @GET("/3/movie/{movie_id}?")
-    fun getMovieDetail(
+    suspend fun getMovieDetail(
         @Query("api_key") apiKey: String,
         @Query("language") language: String,
         @Path("movie_id") movieId: String
     ) : DetailDto
 
     @GET("/3/genre/movie/list?")
-    fun getGenreList(
+    suspend fun getGenreList(
         @Query("api_key") apiKey: String,
         @Query("language") language: String
     ) : GenresDto

@@ -11,7 +11,7 @@ import com.aydinpolat.movieapp.data.remote.models.up_coming.UpComingDto
 interface MovieRepository {
     suspend fun getTopRatedMovies(): TopRatedDto
     suspend fun getUpComingMovies(): UpComingDto
-    suspend fun getPopularMovies(): PopularDto
+    suspend fun getPopularMovies(): TopRatedDto
     suspend fun getLatestMovie(): LatestDto
     suspend fun getSimilarMovies(): SimilarDto
     suspend fun getMovieDetail(): DetailDto
